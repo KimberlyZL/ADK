@@ -1,0 +1,95 @@
+body {
+    background-image: url('fondoo.jpg'); /* Imagen de fondo */
+    margin: 0; /* Eliminar margen por defecto */
+}
+
+.header {
+    background-color: #24303c; /* Color de fondo del encabezado */
+    display: flex; /* Para alinear el logo y el texto */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 10px; /* Espaciado interno */
+}
+
+.logo {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la relación de aspecto */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+}
+
+.header-title {
+    color: white; /* Color del texto */
+    text-shadow:
+        -1px -1px 1px #aaa,
+        0px 2px 1px rgba(0, 0, 0, 0.5),
+        2px 2px 2px rgba(0, 0, 0, 0.7),
+        0px 0px 3px rgba(0, 0, 0, 0.4);
+    font-family: 'Verdana'; /* Fuente */
+    font-size: 80px; /* Tamaño de la fuente */
+    margin: 0; /* Eliminar márgenes por defecto */
+}
+
+/* Estilos generales del contenedor de login */
+.login-container {
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 20px; /* Espaciado desde el encabezado */
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+    text-align: center;
+}
+
+/* Título principal */
+.login-container h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas de los campos */
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #dfcdc3;
+}
+
+/* Estilos para los campos de entrada */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    background: #FFFFFF;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #008000;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: forestgreen;
+}
+
+/* Estilos del botón de inicio de sesión */
+button {
+    width: 100%;
+    background: #32CD32;
+    border: none;
+    padding: 12px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #28a745;
+}
+
+/* Mensajes de estado */
+#message {
+    margin-top: 15px;
+    color: #ffcc00; /* Cambia el color según tus preferencias */
+}
+

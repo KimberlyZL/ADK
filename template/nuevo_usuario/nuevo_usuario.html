@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nuevo_usuario/nuevo_usuario.css') }}">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <h1>Registro de Usuario</h1>
+    <form id="registroForm">
+        <label for="rol">Rol:</label>
+        <select id="rol" name="rol" required>
+            <option value="paciente" selected>Paciente</option>
+            <option value="doctor">Doctor</option>
+            <option value="servicio">Servicio</option>
+        </select>
+        <br><br>
+        <div id="campos"></div>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='nuevo_usuario/nuevo_usuario.js') }}"></script>
+</body>
+</html>

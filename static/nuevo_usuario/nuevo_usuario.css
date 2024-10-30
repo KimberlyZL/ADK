@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif; /* Tipo de letra */
+    background-image: url('fondoo.jpg'); /* Imagen de fondo */
+    background-color: #f4f4f4; /* Color de fondo */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333; /* Color del título */
+    text-align: center; /* Centrar el título */
+}
+
+form {
+    background-color: white; /* Fondo blanco para el formulario */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra del formulario */
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario */
+}
+
+label {
+    display: block; /* Hacer que las etiquetas sean bloque */
+    margin-bottom: 5px; /* Espaciado debajo de las etiquetas */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%; /* Ancho completo */
+    padding: 12px; /* Espaciado interno aumentado */
+    margin-bottom: 15px; /* Espaciado debajo de los campos */
+    border: 1px solid #ccc; /* Bordes suaves */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
+    font-size: 16px; /* Tamaño de fuente aumentado */
+}
+
+button {
+    background-color: #5cb85c; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin bordes */
+    padding: 12px 15px; /* Espaciado interno del botón aumentado */
+    border-radius: 4px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    width: 100%; /* Ancho completo del botón */
+    font-size: 16px; /* Tamaño de fuente del botón */
+}
+
+button:hover {
+    background-color: #4cae4c; /* Color del botón al pasar el mouse */
+}
