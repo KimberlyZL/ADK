@@ -16,6 +16,7 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
+                <th>Contraseña</th>
                 <th>Código</th>
                 <th>Acciones</th>
             </tr>
@@ -27,6 +28,7 @@
                     <td data-th="Nombre">{{ paciente[1] }}</td>
                     <td data-th="Apellido">{{ paciente[2] }}</td>
                     <td data-th="Email">{{ paciente[3] }}</td>
+                    <td data-th="Contraseña">{{ paciente[4] }}</td>
                     <td data-th="Código">{{ paciente[5] }}</td>
                     <td data-th="Acciones">
                         <a href="{{ url_for('editarPaciente', id=paciente[0]) }}">

@@ -5,6 +5,8 @@ function actualizarPaciente(id) {
     const contrasenia = document.getElementById('contrasenia').value;
     const codigo = document.getElementById('codigo').value;
 
+    console.log("Datos a enviar:", { nombre, apellido, email, contrasenia, codigo });
+
     fetch(`/actualizar_paciente/${id}`, {
         method: 'PUT',
         headers: {
@@ -15,7 +17,7 @@ function actualizarPaciente(id) {
             apellido: apellido,
             email: email,
             contrasenia: contrasenia,
-            codigo: codigo
+            codigo: codigo,
         })
     })
     .then(response => {

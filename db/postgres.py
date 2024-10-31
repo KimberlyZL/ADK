@@ -88,7 +88,7 @@ class DatabasePool:
     
     def obtenerPaciente(self, id):
         queryPaciente = """
-        SELECT id, nombre, apellido, email, codigo, contrasenia, 'paciente' AS rol 
+        SELECT id, nombre, apellido, email, contrasenia, codigo, 'paciente' AS rol 
         FROM paciente 
         WHERE id = %s
         """
