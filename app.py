@@ -1,22 +1,24 @@
+import os
 from flask import Flask, jsonify, render_template, request, session, redirect, url_for
-
 from db.postgres import DatabasePool
-
 from manager.manager import Manager
+from urllib.parse import urlparse
 
 app = Flask(__name__, template_folder='template', static_folder='static')
-
 app.secret_key = 'A_SECRET_KEY'
 
+database_url = os.getenv("DATABASE_URL")
+url = urlparse(database_url)
+
 db_pool = DatabasePool(
-        host='localhost',
-        port='5432',
-        database='dosificacion',
-        user='postgres',
-        password='191012',
-        minconn=1,
-        maxconn=20
-    )
+    host=url.hostname,
+    port=url.port,
+    database=url.path[1:],
+    user=url.username,
+    password=url.password,
+    minconn=1,
+    maxconn=20
+)
 
 manager = Manager(db_pool)
 
@@ -99,6 +101,8 @@ def cerrarSesion():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", 5000))
     #app.run(debug=True)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host=host, port=port)
 
