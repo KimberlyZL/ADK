@@ -22,6 +22,8 @@ db_pool = DatabasePool(
 
 manager = Manager(db_pool)
 
+esp32_current_time = 86400000
+
 @app.route('/', methods=['GET'])
 def home():
     return redirect(url_for('login'))
@@ -99,6 +101,32 @@ def eliminarPaciente(id):
 def cerrarSesion():
     session.pop('user_id', None)
     return redirect(url_for('login'))
+
+
+@app.route('/cambiar_tiempo')
+def cambiarTiempo():
+    return render_template('cambiar_tiempo/cambiar_tiempo.html')
+
+
+@app.route('/esp32_time', methods=['GET'])
+def esp32_time():
+    global esp32_current_time
+    print(f"Return Time to ESP32: {esp32_current_time}")
+    return jsonify({"data": esp32_current_time})
+
+
+@app.route('/send', methods=['POST'])
+def send_data():
+    global esp32_current_time
+    data = request.get_json().get('data')
+
+    if data is not None:
+        esp32_current_time = int(data)
+        print(f"Tiempo actualizado por ESP32: {esp32_current_time}")
+        return jsonify({"status": "success"})
+    else:
+        return jsonify({"status": "error", "message": "No se recibió ningún dato"}), 400
+
 
 if __name__ == '__main__':
     host = os.getenv("HOST", "0.0.0.0")
