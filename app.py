@@ -22,7 +22,7 @@ db_pool = DatabasePool(
 
 manager = Manager(db_pool)
 
-esp32_current_time = 86400000
+esp32_current_time = 300000
 
 @app.route('/', methods=['GET'])
 def home():
