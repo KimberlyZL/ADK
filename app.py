@@ -111,6 +111,9 @@ def cambiarTiempo():
 def editardoctor():
     return render_template('editar_doctor/editar_doctor.html')
 
+@app.route('/form_doctor')
+def formdoctor():
+    return render_template('form_doctor/form_doctor.html')
 
 @app.route('/esp32_time', methods=['GET'])
 def esp32_time():
