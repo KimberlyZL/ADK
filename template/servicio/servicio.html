@@ -7,10 +7,30 @@
     <title>Servicio</title>
 </head>
 <body>
-    <a href="{{ url_for('cambiarTiempo') }}">
-        <button>Cambiar tiempo</button>
+    <header class="header">
+        <h1 class="header-title">Panel De Control</h1>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <img src="{{ url_for('static', filename='servicio/paso-del-tiempo.png') }}" alt="Tiempo" class="box-image">
+            <a href="{{ url_for('cambiarTiempo') }}">
+                <button>Cambiar tiempo</button>
+            </a>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='servicio/editar.png') }}" alt="Tiempo" class="box-image">
+            <a href="{{ url_for('editardoctor') }}">
+                <button>Editar Doctor</button>
+            </a>
+        </div>
+    </div>
+
+    <a href="{{ url_for('cerrarSesion') }}">
+        <button class="logout-button">Cerrar Sesión</button>
     </a>
 
     <script src="{{ url_for('static', filename='servicio/servicio.js') }}"></script>
 </body>
 </html>
+

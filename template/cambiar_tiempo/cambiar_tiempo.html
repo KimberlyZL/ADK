@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cambiar_tiempo/cambiar_tiempo.css') }}">
     <title>Enviar Dato</title>
 </head>
 <body>
@@ -10,7 +11,7 @@
     <form id="myForm">
         <input type="number" id="hoursInput" name="hours" placeholder="Ingresa horas" value="0" required>
         <input type="number" id="minutesInput" name="minutes" placeholder="Ingresa minutos" value="0" required>
-        <input type="submit" value="Enviaar">
+        <input type="submit" value="Enviar">
     </form>
 
     <script src="{{ url_for('static', filename='cambiar_tiempo/cambiar_tiempo.js') }}"></script>

@@ -107,6 +107,10 @@ def cerrarSesion():
 def cambiarTiempo():
     return render_template('cambiar_tiempo/cambiar_tiempo.html')
 
+@app.route('/editar_doctor')
+def editardoctor():
+    return render_template('editar_doctor/editar_doctor.html')
+
 
 @app.route('/esp32_time', methods=['GET'])
 def esp32_time():

@@ -1,51 +1,47 @@
-/* Fondo y estilos generales */
+/* Estilos generales para el cuerpo */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('fondoo.jpg');
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+    font-family: Arial, sans-serif; /* Fuente general */
+    background-color: #f4f4f4; /* Color de fondo */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    justify-content: center; /* Centra el formulario horizontalmente */
+    align-items: center; /* Centra el formulario verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Elimina el margen predeterminado */
 }
 
-/* Estilo del formulario */
-form {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    width: 100%;
-    text-align: center;
+/* Estilos para el formulario */
+#myForm {
+    background: #ffffff; /* Fondo blanco para el formulario */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    max-width: 400px; /* Ancho máximo del formulario */
+    width: 100%; /* Ancho completo hasta el máximo */
 }
 
-/* Estilo de los campos de entrada */
+/* Estilos para los campos de entrada */
 input[type="number"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
+    width: calc(100% - 20px); /* Ancho completo menos espaciado interno */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Margen vertical */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
 }
 
-/* Estilo del botón de envío */
+/* Estilos para el botón de envío */
 input[type="submit"] {
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Texto blanco */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Efecto de transición */
 }
 
-/* Efecto hover para el botón */
+/* Cambia el color del botón al pasar el mouse */
 input[type="submit"]:hover {
-    background-color: #4cae4c;
+    background-color: #45a049; /* Color más oscuro al pasar el mouse */
 }
