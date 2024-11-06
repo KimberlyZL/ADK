@@ -107,10 +107,6 @@ def cerrarSesion():
 def cambiarTiempo():
     return render_template('cambiar_tiempo/cambiar_tiempo.html')
 
-@app.route('/editar_doctor')
-def editardoctor():
-    return render_template('editar_doctor/editar_doctor.html')
-
 @app.route('/form_doctor')
 def formdoctor():
     doctores = manager.obtener_doctores()
