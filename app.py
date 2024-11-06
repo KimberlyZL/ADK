@@ -4,6 +4,7 @@ from db.postgres import DatabasePool
 from manager.manager import Manager
 from urllib.parse import urlparse
 
+
 app = Flask(__name__, template_folder='template', static_folder='static')
 app.secret_key = 'A_SECRET_KEY'
 
@@ -27,7 +28,6 @@ esp32_current_time = 300000
 @app.route('/', methods=['GET'])
 def home():
     return redirect(url_for('login'))
-
 @app.route('/login', methods=['GET'])
 def login():
     return render_template('login/index.html')
@@ -140,4 +140,3 @@ if __name__ == '__main__':
     port = int(os.getenv("PORT", 5000))
     #app.run(debug=True)
     app.run(debug=True, host=host, port=port)
-

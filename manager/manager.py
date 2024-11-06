@@ -7,7 +7,7 @@ class Manager:
     
     def obtenerPaciente(self, id):
         return self.db.obtenerPaciente(id)
-    
+
     def login(self, data):
         email = data.get('email')
         password = data.get('password')
