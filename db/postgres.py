@@ -123,9 +123,9 @@ class DatabasePool:
                 'email': doctorResult[0][4],
                 'contraseña': doctorResult[0][5],
                 'codigo': doctorResult[0][6],
-                'institucion': doctorResult[0][2],
-                'fecnacimiento': doctorResult[0][2],
-                'fecregistro': doctorResult[0][2],
+                'institucion': doctorResult[0][7],
+                'fecnacimiento': doctorResult[0][8],
+                'fecregistro': doctorResult[0][9],
                 'rol': 'doctor'
             }
         return None
