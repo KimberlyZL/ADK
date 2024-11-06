@@ -118,6 +118,38 @@
                     <td data-th="Fecha de Registro">{{ doctor[9] }}</td>
                 </tr>
                 {% endfor %}
+
+            <h2>PANEL DE CONTROL DE DISPENSADOR</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Tipo de Oficio</th>
+                    <th>Email</th>
+                    <th>Contraseña</th>
+                    <th>Código</th>
+                    <th>Institución</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Fecha de Registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doctor in doctores %}
+                <tr>
+                    <td data-th="ID">{{ doctor[0] }}</td>
+                    <td data-th="Nombre">{{ doctor[1] }}</td>
+                    <td data-th="Apellido">{{ doctor[2] }}</td>
+                    <td data-th="Tipo de Oficio">{{ doctor[3] }}</td>
+                    <td data-th="Email">{{ doctor[4] }}</td>
+                    <td data-th="Contraseña">{{ doctor[5] }}</td>
+                    <td data-th="Código">{{ doctor[6] }}</td>
+                    <td data-th="Institución">{{ doctor[7] }}</td>
+                    <td data-th="Fecha de Nacimiento">{{ doctor[8] }}</td>
+                    <td data-th="Fecha de Registro">{{ doctor[9] }}</td>
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
