@@ -2,6 +2,9 @@ class Manager:
     def __init__(self, db):
         self.db = db
 
+    def obtener_doctores(self):
+        return self.db.obtener_doctores()
+
     def obtenerPacientes(self):
         return self.db.obtenerPacientes()
     

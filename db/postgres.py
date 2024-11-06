@@ -85,7 +85,9 @@ class DatabasePool:
     def obtenerPacientes(self):
         query = "SELECT * FROM paciente"
         return self.fetchQuery(query)
-    
+    def obtener_doctores(self):
+        query = "SELECT * FROM Doctor"
+        return self.fetchQuery(query)
     def obtenerPaciente(self, id):
         queryPaciente = """
         SELECT id, nombre, apellido, email, contrasenia, codigo, 'paciente' AS rol 
