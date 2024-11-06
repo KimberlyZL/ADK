@@ -85,8 +85,11 @@ class DatabasePool:
     def obtenerPacientes(self):
         query = "SELECT * FROM paciente"
         return self.fetchQuery(query)
-    def obtener_doctores(self):
+    def obtenerDoctores(self):
         query = "SELECT * FROM Doctor"
+        return self.fetchQuery(query)
+    def obtenerDisp(self):
+        query = "SELECT * FROM datos_dispensador"
         return self.fetchQuery(query)
     def obtenerPaciente(self, id):
         queryPaciente = """
@@ -127,6 +130,24 @@ class DatabasePool:
                 'fecnacimiento': doctorResult[0][8],
                 'fecregistro': doctorResult[0][9],
                 'rol': 'doctor'
+            }
+        return None
+
+    def obtenerDispensador(self, id):
+        queryDisp = """
+        SELECT id, distancia, estado, tarjeta_id, timestamp, 'dispensador' AS rol 
+        FROM datos_dispensador
+        WHERE id = %s
+        """
+        dispensadorResult = self.fetchQuery(queryDisp, (id,))
+        if dispensadorResult:
+            return {
+                'id': dispensadorResult[0][0],
+                'distancia': dispensadorResult[0][1],
+                'estado': dispensadorResult[0][2],
+                'tarjeta_id': dispensadorResult[0][3],
+                'timestamp': dispensadorResult[0][4],
+                'rol': 'dispensador'
             }
         return None
 

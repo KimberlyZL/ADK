@@ -2,14 +2,20 @@ class Manager:
     def __init__(self, db):
         self.db = db
 
-    def obtener_doctores(self):
-        return self.db.obtenerdoctores()
+    def obtenerDoctores(self):
+        return self.db.obtenerDoctores()
 
     def obtenerPacientes(self):
         return self.db.obtenerPacientes()
+    def obtenerDispensador(self):
+        return self.db.obtenerDispensador()
     
     def obtenerPaciente(self, id):
         return self.db.obtenerPaciente(id)
+    def obtenerDoctor(self, id):
+        return self.db.obtenerDoctor(id)
+    def obtenerDisp(self, id):
+        return self.db.obtenerDisp(id)
 
     def login(self, data):
         email = data.get('email')
