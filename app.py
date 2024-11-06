@@ -113,7 +113,7 @@ def editardoctor():
 
 @app.route('/form_doctor')
 def formdoctor():
-    doctores = manager.obtener_doctores()
+    doctores = manager.obtenerDoctores()
     return render_template('form_doctor/form_doctor.html', doctores=doctores)
 
 
