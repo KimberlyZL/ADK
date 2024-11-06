@@ -3,7 +3,7 @@ class Manager:
         self.db = db
 
     def obtener_doctores(self):
-        return self.db.obtener_doctores()
+        return self.db.obtenerdoctores()
 
     def obtenerPacientes(self):
         return self.db.obtenerPacientes()
