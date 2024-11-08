@@ -106,6 +106,19 @@ def actualizarPaciente(id):
     manager.actualizarPaciente(data)
     return jsonify({"message": "Paciente actualizado exitosamente."}), 200
 
+@app.route('/editar_doctor/<int:id>', methods=['GET'])
+def editarDoctor(id):
+    doctor = manager.obtenerDoctor(id)
+    return render_template('editar_doctor/editar_doctor.html', doctor=doctor)
+
+@app.route('/actualizar_doctor/<int:id>', methods=['PUT'])
+def actualizarDoctor(id):
+    data = request.json
+    data['id'] = id
+    print(data)
+    manager.actualizarDoctor(data)
+    return jsonify({"message": "Doctor actualizado exitosamente."}), 200
+
 @app.route('/eliminar_paciente/<int:id>', methods=['DELETE'])
 def eliminarPaciente(id):
     manager.eliminarPaciente(id)

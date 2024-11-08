@@ -248,6 +248,42 @@ class DatabasePool:
         params = (paciente_id,)
         return self.executeQuery(query, params)
 
+    def actualizarDoctor(self, doctor_id, nombre=None, apellido=None, toficio=None, email=None, contraseña=None, codigo=None, institucion=None, fecnacimiento=None, fecregistro=None):
+        query = "UPDATE rdoctor SET "
+        fields = []
+        params = []
+        if nombre:
+            fields.append("nombre = %s")
+            params.append(nombre)
+        if apellido:
+            fields.append("apellido = %s")
+            params.append(apellido)
+        if toficio:
+            fields.append("toficio = %s")
+            params.append(toficio)
+        if email:
+            fields.append("email = %s")
+            params.append(email)
+        if contraseña:
+            fields.append("contraseña = %s")
+            params.append(contraseña)
+        if codigo:
+            fields.append("codigo = %s")
+            params.append(codigo)
+        if institucion:
+            fields.append("institucion = %s")
+            params.append(institucion)
+        if fecnacimiento:
+            fields.append("fecnacimiento = %s")
+            params.append(fecnacimiento)
+        if fecregistro:
+            fields.append("fecregistro = %s")
+            params.append(fecregistro)
+
+        query += ", ".join(fields) + " WHERE id = %s"
+        params.append(doctor_id)
+        return self.executeQuery(query, tuple(params))
+
     def login(self, email, password):
         queryPaciente = """
         SELECT id, nombre, apellido, email, 'paciente' AS rol 

@@ -1,16 +1,15 @@
 function actualizarDoctor(id) {
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
-    const TOficio = document.getElementById('TOficio').value;
+    const toficio = document.getElementById('toficio').value;
     const email = document.getElementById('email').value;
-    const contrasenia = document.getElementById('contrasenia').value;
+    const contraseña = document.getElementById('contraseña').value;
     const codigo = document.getElementById('codigo').value;
-    const Institución = document.getElementById('Institución').value;
-    const FecNacimiento = document.getElementById('FecNacimiento').value;
-    const FecIngreso = document.getElementById('FecIngreso').value;
-    const FecRegistro = document.getElementById('FecRegistro').value;
+    const institucion = document.getElementById('institucion').value;
+    const fecnacimiento = document.getElementById('fecnacimiento').value;
+    const fecregistro = document.getElementById('fecregistro').value;
 
-    console.log("Datos a enviar:", { nombre, apellido, TOficio, email, codigo, Institución, FecNacimiento, FecIngreso, FecRegistro });
+    console.log("Datos a enviar:", { nombre, apellido, toficio, email, contraseña, codigo, institucion, fecnacimiento, fecregistro });
 
     fetch(`/actualizar_doctor/${id}`, {
         method: 'PUT',
@@ -20,22 +19,21 @@ function actualizarDoctor(id) {
         body: JSON.stringify({
             nombre: nombre,
             apellido: apellido,
-            TOficio: TOficio
+            toficio:toficio
             email: email,
-            contrasenia: contrasenia,
+            contraseña: contraseña,
             codigo: codigo,
-            Institución: Institución,
-            FecNacimiento: FecNacimiento,
-            FecIngreso: FecIngreso,
-            FecRegistro: FecRegistro,
+            institucion: institucion,
+            fecnacimiento: fecnacimiento,
+            fecregistro: fecregistro,
         })
     })
     .then(response => {
         if (response.ok) {
             alert('Doctor actualizado exitosamente.');
-            window.location.href = '/servicio';
+            window.location.href = '/formdoctor';
         } else {
-            alert('Error al actualizar doctor.');
+            alert('Error al actualizar el doctor.');
         }
     })
     .catch(error => {

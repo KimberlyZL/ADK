@@ -116,6 +116,11 @@
                     <td data-th="Institución">{{ doctor[7] }}</td>
                     <td data-th="Fecha de Nacimiento">{{ doctor[8] }}</td>
                     <td data-th="Fecha de Registro">{{ doctor[9] }}</td>
+                    <td data-th="Acciones">
+                        <a href="{{ url_for('editarPaciente', id=paciente[0]) }}">
+                            <button>Editar</button>
+                        </a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

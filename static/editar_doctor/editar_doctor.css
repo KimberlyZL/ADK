@@ -1,109 +1,74 @@
-/* General page styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Tipo de letra */
+    background-color: #f4f4f4; /* Color de fondo */
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-}
-
-.header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.header-title {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-/* Form container styling */
-.card-body {
-    max-width: 900px;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+body {
+  background-image: url('fondoo.jpg');
 }
 
-/* Row styling */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+h1 {
+    color: #333; /* Color del título */
+    text-align: center; /* Centrar el título */
 }
 
-.form-element {
-    flex: 1;
-    min-width: 200px;
+form {
+    background-color: white; /* Fondo blanco para el formulario */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra del formulario */
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario */
 }
 
-.form-element.full {
-    flex: 1 1 100%;
-}
-
-/* Input and select styling */
 label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: inline-block;
-    color: #333;
+    display: block; /* Hacer que las etiquetas sean bloque */
+    margin-bottom: 5px; /* Espaciado debajo de las etiquetas */
 }
 
 input[type="text"],
-input[type="number"],
-input[type="date"],
-select,
-textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-    box-sizing: border-box;
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado debajo de los campos */
+    border: 1px solid #ccc; /* Bordes suaves */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el padding en el ancho */
 }
 
-textarea {
-    resize: vertical;
+button {
+    background-color: #5cb85c; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin bordes */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    border-radius: 4px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    width: 100%; /* Ancho completo del botón */
 }
 
-/* Button styling */
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 20px;
+button:hover {
+    background-color: #4cae4c; /* Color del botón al pasar el mouse */
 }
 
-.btn {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
+a {
+    text-decoration: none; /* Sin subrayado en los enlaces */
 }
 
-.btn-success {
-    background-color: #4CAF50;
+a button {
+    background-color: #007bff; /* Color de fondo del botón de volver */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin bordes */
+    padding: 8px 12px; /* Espaciado interno más pequeño */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    width: auto; /* Ancho automático para que el botón no ocupe todo el ancho */
+    display: inline-block; /* Hacer que el botón esté alineado con otros elementos */
+    margin-top: 10px; /* Espacio en la parte superior */
 }
 
-.btn-primary {
-    background-color: #007BFF;
-}
-
-.btn:hover {
-    opacity: 0.9;
-}
-
-.BtnForm {
-    width: 100px;
+a button:hover {
+    background-color: #0056b3; /* Color del botón al pasar el mouse */
 }

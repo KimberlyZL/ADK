@@ -54,3 +54,16 @@ class Manager:
         contrasenia = data.get('contrasenia')
         codigo = data.get('codigo')
         return self.db.actualizarPaciente(id, nombre, apellido, email, contrasenia, codigo)
+
+    def actualizarDoctor(self, data):
+        id = data.get('id')
+        nombre = data.get('nombre')
+        apellido = data.get('apellido')
+        toficio = data.get('toficio')
+        email = data.get('email')
+        contraseña = data.get('contraseña')
+        codigo = data.get('codigo')
+        institucion = data.get('institucion')
+        fecnacimiento = data.get('fecnacimiento')
+        fecregistro = data.get('fecregistro')
+        return self.db.actualizarPaciente(id, nombre, apellido, toficio, email, contraseña, codigo, institucion, fecnacimiento,fecregistro)

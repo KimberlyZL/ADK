@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>editar doctor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='editar_doctor/editar_doctor.css') }}">
+    <title>Editar Doctor</title>
 </head>
 <body>
-    <header class="header">
-        <h1 class="header-title">Editar Doctor</h1>
-    </header>
+    <h1>Editar Doctor</h1>
+
+    <form id="editarForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ doctor.nombre }}" required>
+        <br><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" value="{{ doctor.apellido }}" required>
+        <br><br>
+
+        <label for="toficio">Apellido:</label>
+        <input type="text" id="toficio" name="toficio" value="{{ doctor.toficio }}" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ doctor.email }}" required>
+        <br><br>
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" value="{{ doctor.contraseña }}" required>
+        <br><br>
+
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" value="{{ doctor.codigo }}" required>
+        <br><br>
+
+        <label for="institucion">Institución:</label>
+        <input type="text" id="institucion" name="institucion" value="{{ doctor.institucion }}" required>
+        <br><br>
+
+        <label for="fecnacimiento">Fecha de Nacimiento:</label>
+        <input type="text" id="fecnacimiento" name="fecnacimiento" value="{{ doctor.fecnacimiento }}" required>
+        <br><br>
+
+        <label for="fecregistro">Fecha de Registro:</label>
+        <input type="text" id="fecregistro" name="fecregistro" value="{{ doctor.fecregistro }}" required>
+        <br><br>
+
+        <button type="button" onclick="actualizarDoctor({{ doctor.id }})">Actualizar</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('verPacientes') }}">
+        <button>Volver a la lista de pacientes</button>
+    </a>
+    <script src="{{ url_for('static', filename='editar_paciente/editar_paciente.js') }}"></script>
 </body>
 </html>
