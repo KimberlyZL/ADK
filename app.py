@@ -107,6 +107,14 @@ def cerrarSesion():
 def cambiarTiempo():
     return render_template('cambiar_tiempo/cambiar_tiempo.html')
 
+@app.route('/ver_pacientes')
+def verPacientes():
+    return render_template('ver_pacientes/ver_pacientes.html')
+
+@app.route('/datos_dispensador')
+def datosDispensador():
+    return render_template('datos_dispensador/datos_dispensador.html')
+
 @app.route('/editardoctor')
 def editardoctor():
     return render_template('editar_doctor/editar_doctor.html')
