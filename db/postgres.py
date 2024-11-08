@@ -134,7 +134,7 @@ class DatabasePool:
         return None
 
     def obtenerDispensador(self, id):
-        queryDisp = """
+        queryDispensador = """
         SELECT id, distancia, estado, tarjeta_id, timestamp, 'dispensador' AS rol 
         FROM datos_dispensador
         WHERE id = %s
