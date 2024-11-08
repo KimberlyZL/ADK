@@ -63,7 +63,7 @@ def paginaDoctor():
 @app.route('/edpacientes')
 def paginaEdpacientes():
     pacientes = manager.obtenerPacientes()
-    return render_template('doctor/doctor.html', pacientes=pacientes)
+    return render_template('edpacientes/edpacientes.html', pacientes=pacientes)
 
 @app.route('/servicio')
 def paginaServicio():
