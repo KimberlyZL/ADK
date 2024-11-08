@@ -19,7 +19,7 @@ function actualizarDoctor(id) {
         body: JSON.stringify({
             nombre: nombre,
             apellido: apellido,
-            toficio:toficio
+            toficio: toficio,
             email: email,
             contraseña: contraseña,
             codigo: codigo,
