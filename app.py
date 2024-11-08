@@ -46,7 +46,7 @@ def registerLogin():
         if response["rol"] == 'paciente':
             return jsonify({'message': 'Login exitoso', 'redirect': url_for('paginaPaciente')}), 200
         elif response["rol"] == 'doctor':
-            return jsonify({'message': 'Login exitoso', 'redirect': url_for('paginaDoctor')}), 200
+            return jsonify({'message': 'Login exitoso', 'redirect': url_for('verPacientes')}), 200
         elif response["rol"] == 'servicio':
             return jsonify({'message': 'Login exitoso', 'redirect': url_for('paginaServicio')}), 200
     else:
