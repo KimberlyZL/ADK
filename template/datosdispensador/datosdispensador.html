@@ -5,30 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="container">
-        <h1>PANEL DE CONTROL DEL DISPENSADOR</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Distancia</th>
-                    <th>Estado</th>
-                    <th>Usuario</th>
-                    <th>Fecha</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for dispensador in dispensadores %}
-                <tr>
-                    <td data-th="ID">{{ dispensador.id }}</td>
-                    <td data-th="Distancia">{{ dispensador.distancia }}</td>
-                    <td data-th="Estado">{{ dispensador.estado }}</td>
-                    <td data-th="Usuario">{{ dispensador.tarjeta_id }}</td>
-                    <td data-th="Fecha">{{ dispensador.timestamp }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+<h1>datos dispensador</h1>
 </body>
 </html>

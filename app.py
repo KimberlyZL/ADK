@@ -58,12 +58,8 @@ def paginaPaciente():
 
 @app.route('/doctor')
 def paginaDoctor():
-    return render_template('doctor/doctor.html')
-
-@app.route('/ver_pacientes')
-def paginaVerpacientes():
     pacientes = manager.obtenerPacientes()
-    return render_template('ver_pacientes/ver_pacientes.html', pacientes=pacientes)
+    return render_template('doctor/doctor.html', pacientes=pacientes)
 
 @app.route('/servicio')
 def paginaServicio():
@@ -118,12 +114,9 @@ def editardoctor():
 @app.route('/form_doctor')
 def formdoctor():
     doctores = manager.obtenerDoctores()
-    return render_template('form_doctor/form_doctor.html', doctores=doctores)
-
-@app.route('/datosdispensador')
-def formdatosdispensador():
     dispensadores = manager.obtenerDispensador()
-    return render_template('datosdispensador/datosdispensador',  dispensadores=dispensadores)
+    return render_template('form_doctor/form_doctor.html', doctores=doctores, dispensadores=dispensadores)
+
 
 @app.route('/esp32_time', methods=['GET'])
 def esp32_time():
