@@ -58,6 +58,10 @@ def paginaPaciente():
 
 @app.route('/doctor')
 def paginaDoctor():
+    return render_template('doctor/doctor.html')
+
+@app.route('/edpacientes')
+def paginaEdpacientes():
     pacientes = manager.obtenerPacientes()
     return render_template('doctor/doctor.html', pacientes=pacientes)
 
