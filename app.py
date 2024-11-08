@@ -118,9 +118,12 @@ def editardoctor():
 @app.route('/form_doctor')
 def formdoctor():
     doctores = manager.obtenerDoctores()
-    dispensadores = manager.obtenerDispensador()
-    return render_template('form_doctor/form_doctor.html', doctores=doctores, dispensadores=dispensadores)
+    return render_template('form_doctor/form_doctor.html', doctores=doctores)
 
+@app.route('/datosdispensador')
+def formdatosdispensador():
+    dispensadores = manager.obtenerDispensador()
+    return render_template('datosdispensador/datosdispensador',  dispensadores=dispensadores)
 
 @app.route('/esp32_time', methods=['GET'])
 def esp32_time():
