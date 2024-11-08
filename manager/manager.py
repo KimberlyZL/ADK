@@ -66,4 +66,4 @@ class Manager:
         institucion = data.get('institucion')
         fecnacimiento = data.get('fecnacimiento')
         fecregistro = data.get('fecregistro')
-        return self.db.actualizarPaciente(id, nombre, apellido, toficio, email, contraseña, codigo, institucion, fecnacimiento,fecregistro)
+        return self.db.actualizarDoctor(id, nombre, apellido, toficio, email, contraseña, codigo, institucion, fecnacimiento, fecregistro)
