@@ -116,21 +116,23 @@ class DatabasePool:
         FROM Doctor 
         """
         doctorResult = self.fetchQuery(queryDoctor)
-        if doctorResult:
-            return {
-                'id': doctorResult[0][0],
-                'nombre': doctorResult[0][1],
-                'apellido': doctorResult[0][2],
-                'toficio': doctorResult[0][3],
-                'email': doctorResult[0][4],
-                'contraseña': doctorResult[0][5],
-                'codigo': doctorResult[0][6],
-                'institucion': doctorResult[0][7],
-                'fecnacimiento': doctorResult[0][8],
-                'fecregistro': doctorResult[0][9],
-                'rol': 'doctor'
-            }
-        return None
+        if doctorResult and isinstance(doctorResult, list):
+            return [
+                {
+                    'id': row[0],
+                    'nombre': row[1],
+                    'apellido': row[2],
+                    'toficio': row[3],
+                    'email': row[4],
+                    'contraseña': row[5],
+                    'codigo': row[6],
+                    'institucion': row[7],
+                    'fecnacimiento': row[8],
+                    'fecregistro': row[9],
+                    'rol': 'doctor'
+                }
+            ]
+        return []
 
     def obtenerDispensador(self):
         queryDispensador = """
@@ -139,15 +141,17 @@ class DatabasePool:
         """
         dispensadorResult = self.fetchQuery(queryDispensador)
         if dispensadorResult:
-            return {
-                'id': dispensadorResult[0][0],
-                'distancia': dispensadorResult[0][1],
-                'estado': dispensadorResult[0][2],
-                'tarjeta_id': dispensadorResult[0][3],
-                'timestamp': dispensadorResult[0][4],
-                'rol': 'dispensador'
-            }
-        return None
+            return [
+                {
+                    'id': row[0],
+                    'distancia': row[1],
+                    'estado': row[2],
+                    'tarjeta_id': row[3],
+                    'timestamp': row[4],
+                    'rol': 'dispensador'
+                }
+            ]
+        return []
 
 
     def insertarPaciente(self, nombre, apellido, email, contrasenia, codigo):

@@ -106,15 +106,15 @@
             <tbody>
                 {% for doctor in doctores %}
                 <tr>
-                    <td data-th="Nombre">{{ doctor[1] }}</td>
-                    <td data-th="Apellido">{{ doctor[2] }}</td>
-                    <td data-th="Tipo de Oficio">{{ doctor[3] }}</td>
-                    <td data-th="Email">{{ doctor[4] }}</td>
-                    <td data-th="Contraseña">{{ doctor[5] }}</td>
-                    <td data-th="Código">{{ doctor[6] }}</td>
-                    <td data-th="Institución">{{ doctor[7] }}</td>
-                    <td data-th="Fecha de Nacimiento">{{ doctor[8] }}</td>
-                    <td data-th="Fecha de Registro">{{ doctor[9] }}</td>
+                    <td data-th="Nombre">{{ doctor.nombre }}</td>
+                    <td data-th="Apellido">{{ doctor.apellido }}</td>
+                    <td data-th="Tipo de Oficio">{{ doctor.toficio }}</td>
+                    <td data-th="Email">{{ doctor.email }}</td>
+                    <td data-th="Contraseña">{{ doctor.contraseña }}</td>
+                    <td data-th="Código">{{ doctor.codigo }}</td>
+                    <td data-th="Institución">{{ doctor.institucion }}</td>
+                    <td data-th="Fecha de Nacimiento">{{ doctor.fecnacimiento }}</td>
+                    <td data-th="Fecha de Registro">{{ doctor.fecregistro }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -134,10 +134,10 @@
             <tbody>
                 {% for dispensador in dispensadores %}
                 <tr>
-                    <td data-th="Distancia">{{ dispensador[1] }}</td>
-                    <td data-th="Estado">{{ dispensador[2] }}</td>
-                    <td data-th="Usuario">{{ dispensador[3] }}</td>
-                    <td data-th="Fecha">{{ dispensador[4] }}</td>
+                    <td data-th="Distancia">{{ dispensador.distancia }}</td>
+                    <td data-th="Estado">{{ dispensador.estado }}</td>
+                    <td data-th="Usuario">{{ dispensador.tarjeta_id }}</td>
+                    <td data-th="Fecha">{{ dispensador.timestamp }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
