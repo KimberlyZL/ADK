@@ -63,8 +63,7 @@ def paginaDoctor():
 @app.route('/form_doctor')
 def formdoctor():
     doctores = manager.obtenerDoctores()
-    dispensadores = manager.obtenerDispensador()
-    return render_template('form_doctor/form_doctor.html', doctores=doctores, dispensadores=dispensadores)
+    return render_template('form_doctor/form_doctor.html', doctores=doctores)
 
 @app.route('/ver_pacientes')
 def verPacientes():
@@ -73,7 +72,8 @@ def verPacientes():
 
 @app.route('/datos_dispensador')
 def datosDispensador():
-    return render_template('datos_dispensador/datos_dispensador.html')
+    dispensadores = manager.obtenerDispensador()
+    return render_template('datos_dispensador/datos_dispensador.html',  dispensadores=dispensadores)
 
 @app.route('/servicio')
 def paginaServicio():
