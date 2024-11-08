@@ -12,10 +12,10 @@ class Manager:
     
     def obtenerPaciente(self, id):
         return self.db.obtenerPaciente(id)
-    def obtenerDoctor(self, id):
-        return self.db.obtenerDoctor(id)
-    def obtenerDispensador(self, id):
-        return self.db.obtenerDispensador(id)
+    def obtenerDoctor(self):
+        return self.db.obtenerDoctor()
+    def obtenerDispensador(self):
+        return self.db.obtenerDispensador()
 
     def login(self, data):
         email = data.get('email')
