@@ -113,7 +113,7 @@ class DatabasePool:
     def obtenerDoctor(self):
         queryDoctor = """
         SELECT id, nombre, apellido, toficio, email, contraseña, codigo, institucion, fecnacimiento, fecregistro, 'doctor' AS rol 
-        FROM Doctor 
+        FROM RDoctor 
         """
         doctorResult = self.fetchQuery(queryDoctor)
         if doctorResult and isinstance(doctorResult, list):

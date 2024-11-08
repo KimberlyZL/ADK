@@ -106,6 +106,7 @@
             <tbody>
                 {% for doctor in doctores %}
                 <tr>
+                    <td data-th="ID">{{ dispensador.id }}</td>
                     <td data-th="Nombre">{{ doctor.nombre }}</td>
                     <td data-th="Apellido">{{ doctor.apellido }}</td>
                     <td data-th="Tipo de Oficio">{{ doctor.toficio }}</td>
@@ -134,6 +135,7 @@
             <tbody>
                 {% for dispensador in dispensadores %}
                 <tr>
+                    <td data-th="ID">{{ dispensador.id }}</td>
                     <td data-th="Distancia">{{ dispensador.distancia }}</td>
                     <td data-th="Estado">{{ dispensador.estado }}</td>
                     <td data-th="Usuario">{{ dispensador.tarjeta_id }}</td>
