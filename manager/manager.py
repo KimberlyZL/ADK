@@ -12,8 +12,8 @@ class Manager:
     
     def obtenerPaciente(self, id):
         return self.db.obtenerPaciente(id)
-    def obtenerDoctor(self):
-        return self.db.obtenerDoctor()
+    def obtenerDoctor(self, id):
+        return self.db.obtenerDoctor(id)
     def obtenerDispensador(self):
         return self.db.obtenerDispensador()
 

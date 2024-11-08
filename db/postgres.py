@@ -110,30 +110,27 @@ class DatabasePool:
             }
         return None
 
-    def obtenerDoctor(self):
+    def obtenerDoctor(self, id):
         queryDoctor = """
         SELECT id, nombre, apellido, toficio, email, contraseña, codigo, institucion, fecnacimiento, fecregistro, 'doctor' AS rol 
         FROM rdoctor 
         """
-        doctorResult = self.fetchQuery(queryDoctor)
+        doctorResult = self.fetchQuery(queryDoctor, (id,))
         if doctorResult and isinstance(doctorResult, list):
-            return [
-                {
-                    'id': row[0],
-                    'nombre': row[1],
-                    'apellido': row[2],
-                    'toficio': row[3],
-                    'email': row[4],
-                    'contraseña': row[5],
-                    'codigo': row[6],
-                    'institucion': row[7],
-                    'fecnacimiento': row[8],
-                    'fecregistro': row[9],
+            return {
+                    'id': doctorResult[0][0],
+                    'nombre': doctorResult[0][1],
+                    'apellido': doctorResult[0][2],
+                    'toficio': doctorResult[0][3],
+                    'email': doctorResult[0][4],
+                    'contraseña': doctorResult[0][5],
+                    'codigo': doctorResult[0][6],
+                    'institucion': doctorResult[0][7],
+                    'fecnacimiento': doctorResult[0][8],
+                    'fecregistro': doctorResult[0][9],
                     'rol': 'doctor'
                 }
-                for row in doctorResult
-            ]
-        return []
+        return None
 
     def obtenerDispensador(self):
         queryDispensador = """
