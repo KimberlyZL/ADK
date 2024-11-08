@@ -131,6 +131,7 @@ class DatabasePool:
                     'fecregistro': row[9],
                     'rol': 'doctor'
                 }
+                for row in doctorResult
             ]
         return []
 
@@ -150,6 +151,7 @@ class DatabasePool:
                     'timestamp': row[4],
                     'rol': 'dispensador'
                 }
+                for row in dispensadorResult
             ]
         return []
 
