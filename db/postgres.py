@@ -110,48 +110,7 @@ class DatabasePool:
             }
         return None
 
-    def obtenerDoctor(self, id):
-        queryDoctor = """
-        SELECT id, nombre, apellido, toficio, email, contraseña, codigo, institucion, fecnacimiento, fecregistro, 'doctor' AS rol 
-        FROM Doctor 
-        WHERE id = %s
-        """
-        doctorResult = self.fetchQuery(queryDoctor, (id,))
-        if doctorResult:
-            return {
-                'id': doctorResult[0][0],
-                'nombre': doctorResult[0][1],
-                'apellido': doctorResult[0][2],
-                'toficio': doctorResult[0][3],
-                'email': doctorResult[0][4],
-                'contraseña': doctorResult[0][5],
-                'codigo': doctorResult[0][6],
-                'institucion': doctorResult[0][7],
-                'fecnacimiento': doctorResult[0][8],
-                'fecregistro': doctorResult[0][9],
-                'rol': 'doctor'
-            }
-        return None
-
-    def obtenerDispensador(self, id):
-        queryDispensador = """
-        SELECT id, distancia, estado, tarjeta_id, timestamp, 'dispensador' AS rol 
-        FROM datos_dispensador
-        WHERE id = %s
-        """
-        dispensadorResult = self.fetchQuery(queryDispensador, (id,))
-        if dispensadorResult:
-            return {
-                'id': dispensadorResult[0][0],
-                'distancia': dispensadorResult[0][1],
-                'estado': dispensadorResult[0][2],
-                'tarjeta_id': dispensadorResult[0][3],
-                'timestamp': dispensadorResult[0][4],
-                'rol': 'dispensador'
-            }
-        return None
-
-
+    
     def insertarPaciente(self, nombre, apellido, email, contrasenia, codigo):
         query = """
         INSERT INTO paciente (nombre, apellido, email, contrasenia, codigo)
