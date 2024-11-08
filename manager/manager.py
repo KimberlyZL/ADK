@@ -7,8 +7,8 @@ class Manager:
 
     def obtenerPacientes(self):
         return self.db.obtenerPacientes()
-    def obtenerDispensador(self):
-        return self.db.obtenerDispensador()
+    def obtenerDispensadores(self):
+        return self.db.obtenerDispensadores()
     
     def obtenerPaciente(self, id):
         return self.db.obtenerPaciente(id)

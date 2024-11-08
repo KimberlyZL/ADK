@@ -139,7 +139,7 @@ class DatabasePool:
         FROM datos_dispensador
         WHERE id = %s
         """
-        dispensadorResult = self.fetchQuery(queryDisp, (id,))
+        dispensadorResult = self.fetchQuery(queryDispensador, (id,))
         if dispensadorResult:
             return {
                 'id': dispensadorResult[0][0],
