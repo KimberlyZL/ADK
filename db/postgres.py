@@ -114,7 +114,6 @@ class DatabasePool:
         queryDoctor = """
         SELECT id, nombre, apellido, toficio, email, contraseña, codigo, institucion, fecnacimiento, fecregistro, 'doctor' AS rol 
         FROM Doctor 
-        WHERE id = %s
         """
         doctorResult = self.fetchQuery(queryDoctor)
         if doctorResult:
@@ -137,7 +136,6 @@ class DatabasePool:
         queryDispensador = """
         SELECT id, distancia, estado, tarjeta_id, timestamp, 'dispensador' AS rol 
         FROM datos_dispensador
-        WHERE id = %s
         """
         dispensadorResult = self.fetchQuery(queryDispensador)
         if dispensadorResult:
