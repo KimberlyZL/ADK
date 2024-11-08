@@ -46,7 +46,7 @@ def registerLogin():
         if response["rol"] == 'paciente':
             return jsonify({'message': 'Login exitoso', 'redirect': url_for('paginaPaciente')}), 200
         elif response["rol"] == 'doctor':
-            return jsonify({'message': 'Login exitoso', 'redirect': url_for('verPacientes')}), 200
+            return jsonify({'message': 'Login exitoso', 'redirect': url_for('paginaDoctor')}), 200
         elif response["rol"] == 'servicio':
             return jsonify({'message': 'Login exitoso', 'redirect': url_for('paginaServicio')}), 200
     else:
@@ -58,8 +58,22 @@ def paginaPaciente():
 
 @app.route('/doctor')
 def paginaDoctor():
+    return render_template('doctor/doctor.html')
+
+@app.route('/form_doctor')
+def formdoctor():
+    doctores = manager.obtenerDoctores()
+    dispensadores = manager.obtenerDispensador()
+    return render_template('form_doctor/form_doctor.html', doctores=doctores, dispensadores=dispensadores)
+
+@app.route('/ver_pacientes')
+def verPacientes():
     pacientes = manager.obtenerPacientes()
     return render_template('doctor/doctor.html', pacientes=pacientes)
+
+@app.route('/datos_dispensador')
+def datosDispensador():
+    return render_template('datos_dispensador/datos_dispensador.html')
 
 @app.route('/servicio')
 def paginaServicio():
@@ -107,23 +121,9 @@ def cerrarSesion():
 def cambiarTiempo():
     return render_template('cambiar_tiempo/cambiar_tiempo.html')
 
-@app.route('/ver_pacientes')
-def verPacientes():
-    return render_template('ver_pacientes/ver_pacientes.html')
-
-@app.route('/datos_dispensador')
-def datosDispensador():
-    return render_template('datos_dispensador/datos_dispensador.html')
-
 @app.route('/editardoctor')
 def editardoctor():
     return render_template('editar_doctor/editar_doctor.html')
-
-@app.route('/form_doctor')
-def formdoctor():
-    doctores = manager.obtenerDoctores()
-    dispensadores = manager.obtenerDispensador()
-    return render_template('form_doctor/form_doctor.html', doctores=doctores, dispensadores=dispensadores)
 
 
 @app.route('/esp32_time', methods=['GET'])

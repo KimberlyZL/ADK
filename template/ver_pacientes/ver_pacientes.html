@@ -2,11 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ver doctor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='doctor/doctor.css') }}">
+    <title>Servicio</title>
 </head>
 <body>
-    <header class="header">
-        <h1 class="header-title">Ver pacientes</h1>
-    </header>
+    <h1>Pacientes Registrados</h1>
+
+    <table class="rwd-table" border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Contraseña</th>
+                <th>Código</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for paciente in pacientes %}
+                <tr>
+                    <td data-th="ID">{{ paciente[0] }}</td>
+                    <td data-th="Nombre">{{ paciente[1] }}</td>
+                    <td data-th="Apellido">{{ paciente[2] }}</td>
+                    <td data-th="Email">{{ paciente[3] }}</td>
+                    <td data-th="Contraseña">{{ paciente[4] }}</td>
+                    <td data-th="Código">{{ paciente[5] }}</td>
+                    <td data-th="Acciones">
+                        <a href="{{ url_for('editarPaciente', id=paciente[0]) }}">
+                            <button>Editar</button>
+                        </a>
+                        <button onclick="eliminarPaciente({{ paciente[0] }})">Eliminar</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+
+    <a href="{{ url_for('nuevoUsuario') }}">
+        <button>Nuevo Usuario</button>
+    </a>
+    <a href="{{ url_for('cerrarSesion') }}">
+        <button>Cerrar Sesión</button>
+    </a>
+    <script src="{{ url_for('static', filename='doctor/doctor.js') }}"></script>
 </body>
 </html>
