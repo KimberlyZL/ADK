@@ -31,7 +31,7 @@ function actualizarDoctor(id) {
     .then(response => {
         if (response.ok) {
             alert('Doctor actualizado exitosamente.');
-            window.location.href = '/formdoctor';
+            window.location.href = '/form_doctor';
         } else {
             alert('Error al actualizar el doctor.');
         }
