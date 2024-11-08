@@ -135,11 +135,11 @@
             <tbody>
                 {% for dispensador in dispensadores %}
                 <tr>
-                    <td data-th="ID">{{ dispensador[0] }}</td>
-                    <td data-th="Distancia">{{ dispensador[1] }}</td>
-                    <td data-th="Estado">{{ dispensador[2] }}</td>
-                    <td data-th="Usuario">{{ dispensador[3] }}</td>
-                    <td data-th="Fecha">{{ dispensador[4] }}</td>
+                    <td data-th="ID">{{ dispensador[0][0] }}</td>
+                    <td data-th="Distancia">{{ dispensador[0][1] }}</td>
+                    <td data-th="Estado">{{ dispensador[0][2] }}</td>
+                    <td data-th="Usuario">{{ dispensador[0][3] }}</td>
+                    <td data-th="Fecha">{{ dispensador[0][4] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
