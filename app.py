@@ -158,6 +158,17 @@ def send_data():
     else:
         return jsonify({"status": "error", "message": "No se recibió ningún dato"}), 400
 
+@app.route('/guardar_datos', methods=['POST'])
+def guardar_datos():
+    try:
+        data = request.get_json()
+
+        print("Datos recibidos:", data)
+        manager.guardarDatos(data)
+
+        return jsonify({"message": "Datos guardados correctamente", "data": data}), 200
+    except Exception as e:
+        return jsonify({"message": "Error al guardar los datos", "error": str(e)}), 500
 
 if __name__ == '__main__':
     host = os.getenv("HOST", "0.0.0.0")

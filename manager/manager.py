@@ -67,3 +67,10 @@ class Manager:
         fecnacimiento = data.get('fecnacimiento')
         fecregistro = data.get('fecregistro')
         return self.db.actualizarDoctor(id, nombre, apellido, toficio, email, contraseña, codigo, institucion, fecnacimiento, fecregistro)
+
+    def guardarDatos(self, data):
+        distancia = data.get('distancia')
+        estado = data.get('estado')
+        tarjeta = data.get('UID')
+        timestamp = data.get('fecha')
+        self.db.insertarDatosDispensador(distancia, estado, tarjeta, timestamp)

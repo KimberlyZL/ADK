@@ -330,3 +330,25 @@ class DatabasePool:
             }
 
         return None
+
+    def insertarDatosDispensador(self, distancia, estado, tarjeta_id, timestamp):
+        query = """
+        INSERT INTO datos_dispensador (distancia, estado, tarjeta_id, timestamp)
+        VALUES (%s, %s, %s, %s) RETURNING id
+        """
+        params = (distancia, estado, tarjeta_id, timestamp)
+        connection = self.getConnection()
+        cursor = connection.cursor()
+        try:
+            cursor.execute(query, params)
+            new_id = cursor.fetchone()[0]
+            connection.commit()
+            print("New data inserted successfully with ID:", new_id)
+            return new_id
+        except Exception as e:
+            print(f"Error inserting patient: {e}")
+            connection.rollback()
+            return None
+        finally:
+            cursor.close()
+            self.releaseConnection(connection)
