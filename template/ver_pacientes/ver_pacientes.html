@@ -9,6 +9,10 @@
 <body>
     <h1>Pacientes Registrados</h1>
 
+    <label for="filterApellido">Filtrar por Apellido:</label>
+    <input type="text" id="filterApellido" placeholder="Ingrese apellido">
+    <button onclick="filtrarPorApellido()">Filtrar</button>
+
     <table class="rwd-table" border="1">
         <thead>
             <tr>
@@ -21,7 +25,7 @@
                 <th>Acciones</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tablaPacientes">
             {% for paciente in pacientes %}
                 <tr>
                     <td data-th="ID">{{ paciente[0] }}</td>
@@ -49,6 +53,6 @@
     <a href="{{ url_for('cerrarSesion') }}">
         <button>Cerrar Sesión</button>
     </a>
-    <script src="{{ url_for('static', filename='doctor/doctor.js') }}"></script>
+    <script src="{{ url_for('static', filename='ver_pacientes/ver_pacientes.js') }}"></script>
 </body>
 </html>

@@ -17,3 +17,16 @@ function eliminarPaciente(id) {
         });
     }
 }
+
+function filtrarPorApellido() {
+    const filtro = document.getElementById('filterApellido').value.toLowerCase();
+    const filas = document.querySelectorAll('#tablaPacientes tr');
+
+    filas.forEach(fila => {
+        const apellido = fila.querySelector('td[data-th="Apellido"]');
+        if (apellido) {
+            const textoApellido = apellido.textContent.toLowerCase();
+            fila.style.display = textoApellido.includes(filtro) ? '' : 'none';
+        }
+    });
+}
