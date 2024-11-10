@@ -3,54 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ver_pacientes/ver_pacientes.css') }}">
     <title>Servicio</title>
 </head>
-<body class="bg-gray-100 flex flex-col items-center min-h-screen">
+<body>
+    <h1>Pacientes Registrados</h1>
 
-    <h1 class="text-4xl font-bold text-purple-700 mt-8 mb-4">Pacientes Registrados</h1>
-
-    <table class="w-full max-w-5xl bg-white shadow-md rounded-lg overflow-hidden">
-        <thead class="bg-purple-700 text-white">
+    <table class="rwd-table" border="1">
+        <thead>
             <tr>
-                <th class="px-4 py-3 text-left">ID</th>
-                <th class="px-4 py-3 text-left">Nombre</th>
-                <th class="px-4 py-3 text-left">Apellido</th>
-                <th class="px-4 py-3 text-left">Email</th>
-                <th class="px-4 py-3 text-left">Contraseña</th>
-                <th class="px-4 py-3 text-left">Código</th>
-                <th class="px-4 py-3 text-left">Acciones</th>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Contraseña</th>
+                <th>Código</th>
+                <th>Acciones</th>
             </tr>
         </thead>
-        <tbody class="divide-y divide-gray-200">
+        <tbody>
             {% for paciente in pacientes %}
-                <tr class="hover:bg-purple-50 transition duration-150 ease-in-out">
-                    <td class="px-4 py-3" data-th="ID">{{ paciente[0] }}</td>
-                    <td class="px-4 py-3" data-th="Nombre">{{ paciente[1] }}</td>
-                    <td class="px-4 py-3" data-th="Apellido">{{ paciente[2] }}</td>
-                    <td class="px-4 py-3" data-th="Email">{{ paciente[3] }}</td>
-                    <td class="px-4 py-3" data-th="Contraseña">{{ paciente[4] }}</td>
-                    <td class="px-4 py-3" data-th="Código">{{ paciente[5] }}</td>
-                    <td class="px-4 py-3" data-th="Acciones">
+                <tr>
+                    <td data-th="ID">{{ paciente[0] }}</td>
+                    <td data-th="Nombre">{{ paciente[1] }}</td>
+                    <td data-th="Apellido">{{ paciente[2] }}</td>
+                    <td data-th="Email">{{ paciente[3] }}</td>
+                    <td data-th="Contraseña">{{ paciente[4] }}</td>
+                    <td data-th="Código">{{ paciente[5] }}</td>
+                    <td data-th="Acciones">
                         <a href="{{ url_for('editarPaciente', id=paciente[0]) }}">
-                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded mr-2">Editar</button>
+                            <button>Editar</button>
                         </a>
-                        <button onclick="eliminarPaciente({{ paciente[0] }})" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Eliminar</button>
+                        <button onclick="eliminarPaciente({{ paciente[0] }})">Eliminar</button>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
 
-    <div class="flex mt-6 space-x-4">
-        <a href="{{ url_for('nuevoUsuario') }}">
-            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Nuevo Usuario</button>
-        </a>
-        <a href="{{ url_for('cerrarSesion') }}">
-            <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded">Cerrar Sesión</button>
-        </a>
-    </div>
+    <br>
 
+    <a href="{{ url_for('nuevoUsuario') }}">
+        <button>Nuevo Usuario</button>
+    </a>
+    <a href="{{ url_for('cerrarSesion') }}">
+        <button>Cerrar Sesión</button>
+    </a>
     <script src="{{ url_for('static', filename='doctor/doctor.js') }}"></script>
 </body>
 </html>
