@@ -92,20 +92,18 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Usuario</th>
                     <th>Distancia</th>
                     <th>Estado</th>
-                    <th>Usuario</th>
                     <th>Fecha</th>
                 </tr>
             </thead>
             <tbody id="dispensadores-tbody">
                 {% for dispensador in dispensadores %}
                 <tr>
-                    <td data-th="ID">{{ dispensador.id }}</td>
+                    <td data-th="Usuario">{{ dispensador.tarjeta_id }}</td>
                     <td data-th="Distancia">{{ dispensador.distancia }}</td>
                     <td data-th="Estado">{{ dispensador.estado }}</td>
-                    <td data-th="Usuario">{{ dispensador.tarjeta_id }}</td>
                     <td data-th="Fecha">{{ dispensador.timestamp }}</td>
                 </tr>
                 {% endfor %}

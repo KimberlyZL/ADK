@@ -32,18 +32,16 @@ client.on('message', (topic, message) => {
     const cell2 = newRow.insertCell(1);
     const cell3 = newRow.insertCell(2);
     const cell4 = newRow.insertCell(3);
-    const cell5 = newRow.insertCell(4);
+
 
     const currentDate = new Date().toLocaleString();
 
-    cell1.textContent = data.id || 'N/A';
+    cell1.textContent = data.UID || 'N/A';
     cell2.textContent = data.distancia || 'N/A';
     cell3.textContent = data.estado || 'N/A';
-    cell4.textContent = data.UID || 'N/A';
-    cell5.textContent = currentDate;
+    cell4.textContent = currentDate;
 
     sendDataToServer({
-        id: data.id,
         distancia: data.distancia,
         estado: data.estado,
         UID: data.UID,
