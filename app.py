@@ -67,8 +67,10 @@ def formdoctor():
 
 @app.route('/ver_pacientes')
 def verPacientes():
-    pacientes = manager.obtenerPacientes()
-    return render_template('ver_pacientes/ver_pacientes.html', pacientes=pacientes)
+    if(session.get('rol') == 'doctor'):
+        pacientes = manager.obtenerPacientes()
+        return render_template('ver_pacientes/ver_pacientes.html', pacientes=pacientes)
+    return "Acceso denegado", 403
 
 @app.route('/datos_dispensador')
 def datosDispensador():
