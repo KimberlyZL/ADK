@@ -1,80 +1,114 @@
+/* Fondo del cuerpo */
 body {
-    font-family: Arial, sans-serif;
+    background-image: url('fondoo.jpg');
+    background-size: cover;
+    background-position: center;
     margin: 0;
-    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* Estilo general del encabezado */
+h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-top: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Estilo de las celdas de la tabla */
+th, td {
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+/* Estilos para el encabezado de la tabla */
+th {
+    background-color: #6200ee;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Estilos para las filas de la tabla */
+tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.container {
-    max-width: 1150px;
-    margin: 80px auto;
-    padding: 20px;
+tr:nth-child(odd) {
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-th, td {
-    padding: 12px 15px;
-    text-align: left;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
 }
 
 tr:hover {
-    background-color: #e9f7e9;
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
 }
 
-td {
-    border-bottom: 1px solid #ddd;
-}
-
-a {
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #388E3C;
-}
-
-/* Estilo para el botón de acciones */
-.actions a {
-    display: inline-block;
-    padding: 8px 12px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
+/* Estilos para los botones dentro de la tabla */
+table a button {
+    padding: 8px 16px;
+    background-color: #03dac6;
+    border-radius: 6px;
     font-size: 14px;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
 }
 
-.actions a:hover {
-    background-color: #388E3C;
+table a button:hover {
+    background-color: #018786;
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los enlaces dentro de la tabla */
+table a {
+    text-decoration: none;
+}
+
+/* Estilo de los botones de "Editar" */
+a button {
+    padding: 12px 24px;
+    background-color: #6200ee;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
+}
+
+a button:hover {
+    background-color: #3700b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adaptabilidad móvil */
+@media (max-width: 768px) {
+    table {
+        width: 95%;
+    }
+
+    th, td {
+        font-size: 12px;
+    }
+
+    a button {
+        width: 100%;
+    }
 }
