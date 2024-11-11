@@ -60,7 +60,7 @@ def paginaPaciente():
 
 @app.route('/doctor')
 def paginaDoctor():
-    if (session.get('rol') == 'doctor'):
+    if(session.get('rol') == 'doctor'):
         return render_template('doctor/doctor.html')
     return render_template('advertencia/advertencia.html')
 
