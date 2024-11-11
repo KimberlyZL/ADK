@@ -10,8 +10,12 @@ body {
 }
 
 body {
-    background-image: url('fondoo.jpg'); /* Imagen de fondo */
-    margin: 0; /* Eliminar margen por defecto */
+    background-image: url('fondoo.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
 }
 
 /* Estilos para el formulario */
