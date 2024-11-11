@@ -55,3 +55,22 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* Botón de Cerrar Sesión */
+.logout-button {
+    background-color: #018786;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #016b6b;
+}
