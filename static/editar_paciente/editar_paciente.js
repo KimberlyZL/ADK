@@ -23,7 +23,7 @@ function actualizarPaciente(id) {
     .then(response => {
         if (response.ok) {
             alert('Paciente actualizado exitosamente.');
-            window.location.href = '/doctor';
+            window.location.href = '/ver_pacientes';
         } else {
             alert('Error al actualizar el paciente.');
         }
