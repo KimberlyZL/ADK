@@ -180,6 +180,14 @@ def guardar_datos():
     except Exception as e:
         return jsonify({"message": "Error al guardar los datos", "error": str(e)}), 500
 
+@app.after_request
+def add_header(response):
+    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '-1'
+    return response
+
+
 if __name__ == '__main__':
     host = os.getenv("HOST", "0.0.0.0")
     port = int(os.getenv("PORT", 5000))
