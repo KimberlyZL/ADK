@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='paciente/paciente.css') }}">
     <title>Paciente</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="{{ url_for('cerrarSesion') }}">
-        <button>Cerrar Sesión</button>
-    </a>
-    <script src="{{ url_for('static', filename='paciente/paciente.js') }}"></script>
+    <div class="main-image-container">
+        <img src="{{ url_for('static', filename='comple/comple.png') }}" alt="Imagen Principal" class="main-image">
+        <p class="main-text">Texto debajo de la imagen principal</p>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='tarjeta/tarjeta.png') }}">
+            <p>Texto para Imagen 1</p>
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='rfid/rfid.png') }}">
+            <p>Texto para Imagen 2</p>
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='dosi/dosi.png') }}">
+            <p>Texto para Imagen 3</p>
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='llenar/llenar.png') }}">
+            <p>Texto para Imagen 4</p>
+        </div>
+    </div>
 </body>
 </html>
