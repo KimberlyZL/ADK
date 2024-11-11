@@ -8,94 +8,82 @@ body {
     background-position: center;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-}
-
-/* Estilos del encabezado */
-.header {
-    background-color: #24303c; /* Color plomo oscuro */
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.header:hover {
-    transform: scale(1.02);
-}
-
-.logo {
-    width: 120px; /* Tamaño aumentado para la imagen */
-    height: auto;
-    margin-right: 15px;
-}
-
-.header-title {
-    color: #FFFFFF;
-    font-size: 64px; /* Tamaño aumentado para el texto ADK */
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0;
-    transition: color 0.3s ease;
-}
-
-.header-title:hover {
-    color: #388E3C; /* Cambio de color al pasar el mouse */
-}
-
-/* Estilos del contenedor de formulario (login, editar, registro) */
-.form-container {
+/* Contenedor general que centra los elementos */
+.container {
     width: 100%;
-    max-width: 420px;
-    background-color: #24303c;
+    max-width: 500px;
     padding: 40px;
-    margin: 20px auto;
-    border-radius: 12px;
-    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
-    color: #FFFFFF;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
+    animation: fadeIn 0.8s ease-out;
 }
 
-.form-container:hover {
-    transform: scale(1.05);
-}
-
-h1 {
-    font-size: 28px;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-/* Etiquetas de los campos */
-label {
-    display: block;
-    margin-top: 15px;
-    font-size: 16px;
-    color: #DFCDC3;
-    font-weight: 500;
-    text-align: left;
-    animation: fadeIn 1s ease;
-}
-
+/* Animación de entrada */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
+/* Estilos del encabezado */
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.header-title {
+    color: #24303c;
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Título principal */
+h1 {
+    font-size: 30px;
+    color: #24303c;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Estilos de las etiquetas */
+label {
+    display: block;
+    font-size: 16px;
+    color: #8D8D8D;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: left;
+    animation: fadeIn 0.8s ease-out;
+}
+
 /* Estilos de los campos de entrada */
-input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="number"],
-input[type="date"] {
+input[type="text"] {
     width: 100%;
-    background-color: #F5F5F5;
-    padding: 12px;
+    background-color: #F9F9F9;
+    padding: 14px;
     border-radius: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     border: 1px solid #E0E0E0;
     font-size: 16px;
     color: #333333;
@@ -103,28 +91,28 @@ input[type="date"] {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input[type="text"]:focus,
+/* Estilos al enfocar los campos */
 input[type="email"]:focus,
 input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="date"]:focus {
-    border-color: #2E7D32;
+input[type="text"]:focus {
+    border-color: #388E3C;
     outline: none;
     box-shadow: 0 0 8px rgba(46, 125, 50, 0.5);
 }
 
-/* Botones */
+/* Botón de acción */
 button {
     width: 100%;
     background-color: #4CAF50;
-    padding: 14px;
+    padding: 15px;
     border-radius: 8px;
     border: none;
     color: white;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
 }
 
 button:hover {
@@ -139,10 +127,13 @@ button:focus {
 
 /* Enlaces */
 a {
-    color: #FFFFFF;
+    color: #4CAF50;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -160,15 +151,15 @@ a:hover {
 /* Adaptabilidad móvil */
 @media (max-width: 600px) {
     .header-title {
-        font-size: 48px;
+        font-size: 40px;
     }
 
-    .form-container {
+    .container {
         width: 90%;
-        padding: 20px;
+        padding: 30px;
     }
 
     .logo {
-        width: 100px;
+        width: 80px;
     }
 }
