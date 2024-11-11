@@ -1,115 +1,176 @@
-@import "compass/css3";
-
-$breakpoint-alpha: 480px;
-
-.rwd-table {
-  margin: 1em 0;
-  min-width: 300px;
-
-  tr {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-  }
-
-  th {
-    display: none;
-  }
-
-  td {
-    display: block;
-
-    &:first-child {
-      padding-top: .5em;
-    }
-    &:last-child {
-      padding-bottom: .5em;
-    }
-
-    &:before {
-      content: attr(data-th) ": ";
-      font-weight: bold;
-      width: 6.5em;
-      display: inline-block;
-
-      @media (min-width: $breakpoint-alpha) {
-        display: none;
-      }
-    }
-  }
-
-  th, td {
-    text-align: left;
-
-    @media (min-width: $breakpoint-alpha) {
-      display: table-cell;
-      padding: .25em .5em;
-
-      &:first-child {
-        padding-left: 0;
-      }
-
-      &:last-child {
-        padding-right: 0;
-      }
-    }
-  }
-}
-
-// Estilos de presentación
-
-@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
-
+/* Estilo general del cuerpo */
 body {
-  padding: 0 2em;
-  font-family: Montserrat, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  color: #444;
-  background: #eee;
-}
-body {
-  background-image: url('fondoo.jpg');
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
+/* Encabezado */
 h1 {
-  font-weight: normal;
-  letter-spacing: -1px;
-  color: #34495E;
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-top: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-.rwd-table {
-  background: #34495E;
-  color: #fff;
-  border-radius: .4em;
-  overflow: hidden;
+/* Estilos para el filtro */
+label, input, button {
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+}
 
-  tr {
-    border-color: lighten(#34495E, 10%);
-  }
+/* Estilo para el filtro de apellido */
+#filterApellido {
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
 
-  th, td {
-    margin: .5em 1em;
-
-    @media (min-width: $breakpoint-alpha) {
-      padding: 1em !important;
-    }
-  }
-
-  th, td:before {
-    color: #dd5;
-  }
+#filterApellido:focus {
+    border-color: #6200ee;
 }
 
 /* Botones */
 button {
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 5px;
-  background-color: #3498db;
-  color: white;
-  cursor: pointer;
+    padding: 12px 24px;
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px;
 }
 
 button:hover {
-  background-color: #2980b9;
+    background-color: #3700b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(98, 0, 238, 0.3);
+}
+
+/* Estilos de la tabla */
+.rwd-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Estilo de las celdas de la tabla */
+.rwd-table th, .rwd-table td {
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+/* Estilos para el encabezado de la tabla */
+.rwd-table th {
+    background-color: #6200ee;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Estilos para las filas de la tabla */
+.rwd-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.rwd-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.rwd-table tr:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+/* Estilos para los botones dentro de la tabla */
+.rwd-table button {
+    padding: 8px 16px;
+    background-color: #03dac6;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
+}
+
+.rwd-table button:hover {
+    background-color: #018786;
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los enlaces dentro de la tabla */
+.rwd-table a {
+    text-decoration: none;
+}
+
+/* Estilos para los enlaces en los botones */
+.rwd-table a button {
+    background-color: #6200ee;
+}
+
+.rwd-table a button:hover {
+    background-color: #3700b3;
+}
+
+/* Estilo para los botones de "Nuevo Usuario" y "Cerrar Sesión" */
+a {
+    display: inline-block;
+    text-align: center;
+}
+
+a button {
+    width: auto;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #6200ee;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease;
+}
+
+a button:hover {
+    background-color: #3700b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adaptabilidad móvil */
+@media (max-width: 768px) {
+    .rwd-table {
+        width: 95%;
+    }
+
+    #filterApellido {
+        width: 200px;
+    }
+
+    button {
+        width: 100%;
+    }
 }

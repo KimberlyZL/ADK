@@ -71,10 +71,9 @@ def formdoctor():
 
 @app.route('/ver_pacientes')
 def verPacientes():
-    if(session.get('rol') == 'doctor'):
-        pacientes = manager.obtenerPacientes()
-        return render_template('ver_pacientes/ver_pacientes.html', pacientes=pacientes)
-    return render_template('advertencia/advertencia.html')
+    pacientes = manager.obtenerPacientes()
+    return render_template('ver_pacientes/ver_pacientes.html', pacientes=pacientes)
+
 
 @app.route('/datos_dispensador')
 def datosDispensador():
