@@ -1,13 +1,14 @@
-/* Estilo general del cuerpo */
+/* Fondo del cuerpo */
 body {
-    font-family: 'Roboto', sans-serif;
+    background-image: url('fondoo.jpg');
+    background-size: cover;
+    background-position: center;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
     color: #333;
 }
 
-/* Encabezado */
+/* Estilo general del encabezado */
 h1 {
     text-align: center;
     font-size: 36px;
