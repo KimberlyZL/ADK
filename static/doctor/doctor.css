@@ -1,47 +1,26 @@
-/* Fondo del cuerpo */
+/* Fondo de toda la página en color plomo */
 body {
-    background-image: url('fondoo.jpg');
+    background-color: #4A4A4A; /* Color plomo */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* Contenedor principal con la imagen de fondo */
+.panel-container {
+    background-image: url('{{ url_for("static", filename="doctor/fondo.jpg") }}');
     background-size: cover;
     background-position: center;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+    padding-top: 20px;
 }
 
-/* Encabezado */
-.header {
-    background-color: #24303c;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    width: 120px;
-    height: auto;
-    margin-right: 15px;
-}
-
-.header-title {
-    color: #FFFFFF;
+/* Estilo del título del Panel de Control */
+.panel-title {
+    color: white;  /* Letras blancas */
     font-size: 64px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
-}
-
-/* Contenedor principal */
-main {
-    padding-top: 20px;
-}
-
-/* Estilos del panel de control */
-.panel-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
 /* Estilos de cada tarjeta */
@@ -51,6 +30,7 @@ main {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 48%;
+    margin-bottom: 20px;
 }
 
 /* Títulos dentro de las tarjetas */
