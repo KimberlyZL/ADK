@@ -1,54 +1,174 @@
+/* Importación de Material 3 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Fondo del cuerpo */
 body {
-    font-family: Arial, sans-serif; /* Tipo de letra */
-    background-image: url('fondoo.jpg'); /* Imagen de fondo */
-    background-color: #f4f4f4; /* Color de fondo */
+    background-image: url('fondoo.jpg');
+    background-size: cover;
+    background-position: center;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilos del encabezado */
+.header {
+    background-color: #24303c; /* Color plomo oscuro */
+    display: flex;
+    align-items: center;
     padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.header:hover {
+    transform: scale(1.02);
+}
+
+.logo {
+    width: 120px; /* Tamaño aumentado para la imagen */
+    height: auto;
+    margin-right: 15px;
+}
+
+.header-title {
+    color: #FFFFFF;
+    font-size: 64px; /* Tamaño aumentado para el texto ADK */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.header-title:hover {
+    color: #388E3C; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos del contenedor de formulario (login, editar, registro) */
+.form-container {
+    width: 100%;
+    max-width: 420px;
+    background-color: #24303c;
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+    transform: scale(1.05);
 }
 
 h1 {
-    color: #333; /* Color del título */
-    text-align: center; /* Centrar el título */
+    font-size: 28px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
-form {
-    background-color: white; /* Fondo blanco para el formulario */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra del formulario */
-    max-width: 400px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centrar el formulario */
-}
-
+/* Etiquetas de los campos */
 label {
-    display: block; /* Hacer que las etiquetas sean bloque */
-    margin-bottom: 5px; /* Espaciado debajo de las etiquetas */
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #DFCDC3;
+    font-weight: 500;
+    text-align: left;
+    animation: fadeIn 1s ease;
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Estilos de los campos de entrada */
 input[type="text"],
 input[type="email"],
 input[type="password"],
-select {
-    width: 100%; /* Ancho completo */
-    padding: 12px; /* Espaciado interno aumentado */
-    margin-bottom: 15px; /* Espaciado debajo de los campos */
-    border: 1px solid #ccc; /* Bordes suaves */
-    border-radius: 4px; /* Bordes redondeados */
-    box-sizing: border-box; /* Incluye el padding en el ancho */
-    font-size: 16px; /* Tamaño de fuente aumentado */
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    background-color: #F5F5F5;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    border: 1px solid #E0E0E0;
+    font-size: 16px;
+    color: #333333;
+    font-weight: 400;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #2E7D32;
+    outline: none;
+    box-shadow: 0 0 8px rgba(46, 125, 50, 0.5);
+}
+
+/* Botones */
 button {
-    background-color: #5cb85c; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    border: none; /* Sin bordes */
-    padding: 12px 15px; /* Espaciado interno del botón aumentado */
-    border-radius: 4px; /* Bordes redondeados del botón */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    width: 100%; /* Ancho completo del botón */
-    font-size: 16px; /* Tamaño de fuente del botón */
+    width: 100%;
+    background-color: #4CAF50;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-    background-color: #4cae4c; /* Color del botón al pasar el mouse */
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+/* Enlaces */
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #388E3C;
+}
+
+/* Mensajes de estado */
+#message {
+    margin-top: 15px;
+    color: #FF5722;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Adaptabilidad móvil */
+@media (max-width: 600px) {
+    .header-title {
+        font-size: 48px;
+    }
+
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 100px;
+    }
 }
