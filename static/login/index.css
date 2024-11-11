@@ -1,95 +1,133 @@
+/* Fondo del cuerpo */
 body {
-    background-image: url('fondoo.jpg'); /* Imagen de fondo */
-    margin: 0; /* Eliminar margen por defecto */
+    background-image: url('fondoo.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Estilos del encabezado */
 .header {
-    background-color: #24303c; /* Color de fondo del encabezado */
-    display: flex; /* Para alinear el logo y el texto */
-    align-items: center; /* Centra verticalmente los elementos */
-    padding: 10px; /* Espaciado interno */
+    background-color: #1E2A32;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    width: 100px; /* Ajusta el tamaño según sea necesario */
-    height: auto; /* Mantiene la relación de aspecto */
-    margin-right: 10px; /* Espacio entre el logo y el texto */
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
 }
 
 .header-title {
-    color: white; /* Color del texto */
-    text-shadow:
-        -1px -1px 1px #aaa,
-        0px 2px 1px rgba(0, 0, 0, 0.5),
-        2px 2px 2px rgba(0, 0, 0, 0.7),
-        0px 0px 3px rgba(0, 0, 0, 0.4);
-    font-family: 'Verdana'; /* Fuente */
-    font-size: 80px; /* Tamaño de la fuente */
-    margin: 0; /* Eliminar márgenes por defecto */
+    color: #FFFFFF;
+    font-size: 56px; /* Tamaño más grande para ADK */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
 }
 
-/* Estilos generales del contenedor de login */
+/* Estilos del contenedor de login */
 .login-container {
-    width: 400px;
-    background: #24303c;
-    padding: 30px;
-    margin: auto;
-    margin-top: 20px; /* Espaciado desde el encabezado */
-    border-radius: 4px;
-    font-family: 'calibri';
-    color: white;
-    box-shadow: 7px 13px 37px #000;
-    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    background: #FFFFFF;
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+    color: #333333;
+    text-align: center; /* Centra el contenido dentro del contenedor */
 }
 
-/* Título principal */
+/* Título principal del formulario */
 .login-container h1 {
-    font-size: 26px;
+    font-size: 28px;
+    color: #1E2A32;
     margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center; /* Centra el texto del título */
 }
 
 /* Etiquetas de los campos */
 label {
     display: block;
     margin-top: 15px;
-    font-size: 18px;
-    color: #dfcdc3;
+    font-size: 16px;
+    color: #757575;
+    font-weight: 500;
+    text-align: left; /* Alinea las etiquetas a la izquierda */
 }
 
-/* Estilos para los campos de entrada */
+/* Estilos de los campos de entrada */
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    background: #FFFFFF;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    border: 1px solid #008000;
-    font-family: 'calibri';
-    font-size: 18px;
-    color: forestgreen;
+    background-color: #F5F5F5;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    border: 1px solid #E0E0E0;
+    font-size: 16px;
+    color: #333333;
+    font-weight: 400;
+    transition: border-color 0.3s ease;
 }
 
-/* Estilos del botón de inicio de sesión */
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #2E7D32; /* Verde oscuro para el enfoque */
+    outline: none;
+}
+
+/* Botón de inicio de sesión en verde */
 button {
     width: 100%;
-    background: #32CD32;
+    background-color: #4CAF50; /* Verde para el botón */
+    padding: 14px;
+    border-radius: 8px;
     border: none;
-    padding: 12px;
     color: white;
     font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    margin-top: 10px;
-    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #28a745;
+    background-color: #388E3C; /* Verde más oscuro en hover */
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3); /* Sombra verde para el enfoque */
 }
 
 /* Mensajes de estado */
 #message {
     margin-top: 15px;
-    color: #ffcc00; /* Cambia el color según tus preferencias */
+    color: #FF5722;
+    font-size: 14px;
+    font-weight: 500;
 }
 
+/* Adaptabilidad móvil */
+@media (max-width: 600px) {
+    .header-title {
+        font-size: 36px;
+    }
+
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+}

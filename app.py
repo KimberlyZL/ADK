@@ -54,11 +54,15 @@ def registerLogin():
 
 @app.route('/paciente')
 def paginaPaciente():
-    return render_template('paciente/paciente.html')
+    if(session.get('rol')== 'paciente'):
+        return render_template('paciente/paciente.html')
+    return render_template('advertencia/advertencia.html')
 
 @app.route('/doctor')
 def paginaDoctor():
-    return render_template('doctor/doctor.html')
+    if (session.get('rol') == 'doctor'):
+        return render_template('doctor/doctor.html')
+    return render_template('advertencia/advertencia.html')
 
 @app.route('/form_doctor')
 def formdoctor():
@@ -70,16 +74,20 @@ def verPacientes():
     if(session.get('rol') == 'doctor'):
         pacientes = manager.obtenerPacientes()
         return render_template('ver_pacientes/ver_pacientes.html', pacientes=pacientes)
-    return "Acceso denegado", 403
+    return render_template('advertencia/advertencia.html')
 
 @app.route('/datos_dispensador')
 def datosDispensador():
-    dispensadores = manager.obtenerDispensador()
-    return render_template('datos_dispensador/datos_dispensador.html',  dispensadores=dispensadores)
+    if(session.get('rol')== 'doctor'):
+        dispensadores = manager.obtenerDispensador()
+        return render_template('datos_dispensador/datos_dispensador.html',  dispensadores=dispensadores)
+    return render_template('advertencia/advertencia.html')
 
 @app.route('/servicio')
 def paginaServicio():
-    return render_template('servicio/servicio.html')
+    if (session.get('rol') == 'servicio'):
+        return render_template('servicio/servicio.html')
+    return render_template('advertencia/advertencia.html')
 
 @app.route('/nuevo_usuario')
 def nuevoUsuario():
