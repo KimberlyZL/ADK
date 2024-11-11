@@ -1,12 +1,9 @@
 body {
-    font-family: Arial, sans-serif; /* Tipo de letra */
-    background-color: #f4f4f4; /* Color de fondo */
+    background-image: url('fondoo.jpg');
+    background-size: cover;
+    background-position: center;
     margin: 0;
-    padding: 20px;
-}
-
-body {
-  background-image: url('fondoo.jpg');
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -30,46 +27,30 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+select {
     width: 100%; /* Ancho completo */
-    padding: 10px; /* Espaciado interno */
+    padding: 12px; /* Espaciado interno aumentado */
     margin-bottom: 15px; /* Espaciado debajo de los campos */
     border: 1px solid #ccc; /* Bordes suaves */
     border-radius: 4px; /* Bordes redondeados */
     box-sizing: border-box; /* Incluye el padding en el ancho */
+    font-size: 16px; /* Tamaño de fuente aumentado */
 }
 
 button {
-    background-color: #5cb85c; /* Color de fondo del botón */
+    background-color: #018786; /* Color de fondo del botón */
     color: white; /* Color del texto del botón */
     border: none; /* Sin bordes */
-    padding: 10px 15px; /* Espaciado interno del botón */
+    padding: 12px 15px; /* Espaciado interno del botón aumentado */
     border-radius: 4px; /* Bordes redondeados del botón */
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
     width: 100%; /* Ancho completo del botón */
+    font-size: 16px; /* Tamaño de fuente del botón */
 }
 
 button:hover {
     background-color: #4cae4c; /* Color del botón al pasar el mouse */
 }
 
-a {
-    text-decoration: none; /* Sin subrayado en los enlaces */
-}
-
-a button {
-    background-color: #007bff; /* Color de fondo del botón de volver */
-    color: white; /* Color del texto del botón */
-    border: none; /* Sin bordes */
-    padding: 8px 12px; /* Espaciado interno más pequeño */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    width: auto; /* Ancho automático para que el botón no ocupe todo el ancho */
-    display: inline-block; /* Hacer que el botón esté alineado con otros elementos */
-    margin-top: 10px; /* Espacio en la parte superior */
-}
-
-a button:hover {
-    background-color: #0056b3; /* Color del botón al pasar el mouse */
-}
 
