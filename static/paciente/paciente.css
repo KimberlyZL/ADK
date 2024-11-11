@@ -1,11 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
     background-image: url('fondoo.jpg');
-    background-color: #f4f4f4;
+    background-size: cover;
+    background-position: center;
     margin: 0;
-    padding: 20px;
-    position: relative; /* Necesario para que el botón se posicione relativo al body */
-    min-height: 100vh; /* Asegúrate de que el body tenga una altura mínima */
+    font-family: 'Roboto', sans-serif;
+    color: #333;
 }
 
 h1 {
@@ -15,7 +14,7 @@ h1 {
 }
 
 button {
-    background-color: #5cb85c;
+    background-color: #018786;
     color: white;
     border: none;
     padding: 12px 20px;
